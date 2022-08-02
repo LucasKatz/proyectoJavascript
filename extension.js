@@ -6,14 +6,14 @@ saludar ();
 
 class listaDeCompras {
     constructor(nombre, precio, celiacos, unidades ) {
-        this.nombre  = nombre.toLowerCase();
+        this.nombre  = nombre;
         this.precio  = parseFloat(precio);
         this.celiacos = celiacos;
         this.unidades = unidades;
     }
 }
 
-const productos = []; 
+const productos = [];
 
 let producto = prompt ("Ingresa el producto de su interés. \n brownies con dulce de leche \n brownies con nuez \n magdalenas \n cookies de chocolate \n cookies con chips \n cookies surtidas \n pan de salvado \n trenza de pan sin semillas \n trenza de pan con semillas \n cañoncitos \n vigilantes \n medialunas \n calamares rellenos \n locro \n matambre \n torta personalizada \n huevo de pascua \n rosca de pascua \n pan dulce \n apto para celiacos \n (fin para ver el total).").toLowerCase();
 let precio=0;
@@ -107,8 +107,8 @@ while(producto!="fin"){
     }
 
     console.table(productos);
-    
-    producto=prompt("Ingresa el producto de su interés. \n brownies con dulce de leche \n brownies con nuez \n magdalenas \n cookies de chocolate \n cookies con chips \n cookies surtidas \n pan de salvado \n trenza de pan sin semillas \n trenza de pan con semillas \n cañoncitos \n vigilantes \n medialunas \n calamares rellenos \n locro \n matambre \n torta personalizada \n huevo de pascua \n rosca de pascua \n pan dulce \n apto para celiacos  (fin para ver el total).");
+
+    producto=prompt("Ingresa el producto de su interés. \n brownies con dulce de leche \n brownies con nuez \n magdalenas \n cookies de chocolate \n cookies con chips \n cookies surtidas \n pan de salvado \n trenza de pan sin semillas \n trenza de pan con semillas \n cañoncitos \n vigilantes \n medialunas \n calamares rellenos \n locro \n matambre \n torta personalizada \n huevo de pascua \n rosca de pascua \n pan dulce \n apto para celiacos  (fin para ver el total).").toLowerCase();
 }
 
 const filtro = productos.filter ((pro) => pro.celiacos==true)
