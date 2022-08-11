@@ -206,7 +206,7 @@ main #galeria {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   padding-bottom: 25px;
-  height: 1700px;
+  height: 1850px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -228,144 +228,19 @@ main #galeria .card {
       -ms-flex-align: center;
           align-items: center;
   padding: 5px;
-  margin: 5px;
+  margin: 10px;
   background-image: -webkit-gradient(linear, left top, right top, from(white), to(#b17f48));
   background-image: linear-gradient(to right, white, #b17f48);
 }
 
-main #galeria .brownies1 {
-  margin: 5px;
-}
-
-main #galeria .brownies1:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-}
-
-main #galeria .brownies2 {
-  margin: 5px;
-}
-
-main #galeria .brownies2:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-}
-
-main #galeria .brownies3 {
-  margin: 5px;
-}
-
-main #galeria .brownies3:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-}
-
-main #galeria .cookies1 {
-  margin: 5px;
-}
-
-main #galeria .cookies1:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-}
-
-main #galeria .cookies2 {
-  margin: 5px;
-}
-
-main #galeria .cookies2:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-}
-
-main #galeria .cookies3 {
-  margin: 5px;
-}
-
-main #galeria .cookies3:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-}
-
-main #galeria .panificados1 {
-  margin: 5px;
-}
-
-main #galeria .panificados1:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-}
-
-main #galeria .panificados2 {
-  margin: 5px;
-}
-
-main #galeria .panificados2:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-}
-
-main #galeria .panificados3 {
-  margin: 5px;
-}
-
-main #galeria .panificados3:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-}
-
-main #galeria .facturas1 {
-  margin: 5px;
-}
-
-main #galeria .facturas1:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-}
-
-main #galeria .facturas2 {
-  margin: 5px;
-}
-
-main #galeria .facturas2:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-}
-
-main #galeria .facturas3 {
-  margin: 5px;
-}
-
-main #galeria .facturas3:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-}
-
-main #galeria .salado1 {
-  margin: 5px;
-}
-
-main #galeria .salado1:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-}
-
-main #galeria .salado2 {
-  margin: 5px;
-}
-
-main #galeria .salado2:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-}
-
-main #galeria .salado3 {
-  margin: 5px;
-}
-
-main #galeria .salado3:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+main .fin {
+  text-align: center;
+  margin-left: 45%;
+  border-style: solid;
+  margin-bottom: 10px;
+  background-color: #1b1bce;
+  color: white;
+  font-size: larger;
 }
 
 /*FESTIVIDADES - INFORMACIÓN GENERAL */
