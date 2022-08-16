@@ -8,7 +8,12 @@ class listado {
 }
 }
 
-const productos = [];
+let productos = [];
+
+if(localStorage.getItem("productos")){
+    productos=JSON.parse(localStorage.getItem("productos"));
+    //cargar los elementos del carro abandonado a la tabla
+}
 
 const menu = [
 
@@ -152,10 +157,13 @@ for(const imagen of menu){
 
     miBoton.addEventListener("click", (e) => {
         e.preventDefault();
+        alert("Agregaste" + " " + imagen.nombre + " " +"al carrito");
         console.log("Agregaste" + " " + imagen.nombre + " " +"al carrito");
         productos.push(imagen);
+        localStorage.setItem("productos",JSON.stringify(productos));
     })
 
+    
 }
 
 //HACER EL CHECKOUT
@@ -174,7 +182,8 @@ botonFinDeCompra.addEventListener ("click", (e) => {
 
     console.log ("El total a pagar es $" + checkOut)
 
-
+    
+    
 })
 
 
