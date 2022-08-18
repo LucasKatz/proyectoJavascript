@@ -104,75 +104,80 @@ box-sizing: border-box;
 @import "_footer";
 
 /*PRODUCTOS - GALERIAS */
-    main {
+main {
 
-        background-image: radial-gradient(circle at center, white 0,#b17f48 );
+    background-image: radial-gradient(circle at center, white 0,#b17f48 );
 
-        .titleBar {
-            height: 60px;
-            background-color: $color2;
+    .titleBar {
+        height: 60px;
+        background-color: $color2;
 
-
-            .titles{
-                padding: 8px;
-                font-size: 40px;
-                text-align: center;
-                font-family: $font2;
-                color:$color1;
-            }
-
+        .titles{
+            padding: 8px;
+            font-size: 40px;
+            text-align: center;
+            font-family: $font2;
+            color:$color1;
         }
 
-        #galeria{
-            display: flex;
-            flex-wrap: wrap;
-            padding-bottom: 25px;
-            height: 1850px;
-            justify-content: center;
-
-            .title1{
-                text-align: center;
-                font-size:xx-large;
-                font-family:$font1
-            }
-
-            .title2{
-                @extend .title1;
-            }
-
-            .title3{
-                @extend .title1;
-            }
-
-            .title4{
-                @extend .title1;
-            }
-
-            .title5{
-                @extend .title1;
-            }
-
-            img {
-                width: 180px;
-                height: 180px;
-            }
-
-            .card {
-                align-items: center;
-                padding: 5px;
-                margin: 10px;
-                background-image:linear-gradient(to right,white, #b17f48);
-            }
     }
-    .fin{
-        text-align: center;
-        margin-left: 45%;
-        border-style: solid;
-        margin-bottom: 10px;
-        background-color: rgb(27, 27, 206);
-        color: white;
-        font-size: larger;
-    }
+
+    #galeria{
+        display: flex;
+        flex-wrap: wrap;
+        padding-bottom: 25px;
+        height: 2100px;
+        justify-content: center;
+
+        .title1{
+            text-align: center;
+            font-size:xx-large;
+            font-family:$font1
+        }
+
+        .title2{
+            @extend .title1;
+        }
+
+        .title3{
+            @extend .title1;
+        }
+
+        .title4{
+            @extend .title1;
+        }
+
+        .title5{
+            @extend .title1;
+        }
+
+        img {
+            width: 180px;
+            height: 180px;
+        }
+
+        .card {
+            align-items: center;
+            padding: 5px;
+            margin: 10px;
+            background-image:linear-gradient(to right,white, #b17f48);
+        }
+
+        #miboton {
+            margin-bottom: 4px;
+        }
+}
+.fin{
+    text-align: center;
+    width: 100px;
+    height: 75px;
+    margin:auto;
+    border-style: solid;
+    margin-bottom: 10px;
+    background-color: rgb(27, 27, 206);
+    color: white;
+    font-size: larger;
+}
 }
 
     /*FESTIVIDADES - INFORMACIÓN GENERAL */
