@@ -206,7 +206,7 @@ main #galeria {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   padding-bottom: 25px;
-  height: 1850px;
+  height: 2100px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -233,9 +233,15 @@ main #galeria .card {
   background-image: linear-gradient(to right, white, #b17f48);
 }
 
+main #galeria #miboton {
+  margin-bottom: 4px;
+}
+
 main .fin {
   text-align: center;
-  margin-left: 45%;
+  width: 100px;
+  height: 75px;
+  margin: auto;
   border-style: solid;
   margin-bottom: 10px;
   background-color: #1b1bce;
