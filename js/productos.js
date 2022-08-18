@@ -10,6 +10,7 @@ class listado {
 
 let productos = [];
 
+
 if(localStorage.getItem("productos")){
     productos=JSON.parse(localStorage.getItem("productos"));
     //cargar los elementos del carro abandonado a la tabla
@@ -139,6 +140,7 @@ const menu = [
 
 
 let cards=document.getElementById("galeria");
+
 for(const imagen of menu){
     let card=document.createElement("div");
     card.className="card col-3 text-align-center";
@@ -148,7 +150,7 @@ for(const imagen of menu){
     <h5 class="card-title">${imagen.nombre}</h5>
     <p class="card-text">${imagen.precio}</p>
     <button id="miBoton--${imagen.nombre}" class="btn btn-primary">Agregar al Carrito</button>
-    <button id="miBoton2--${imagen.nombre}" class="btn btn-primary">Quitar del Carrito</button>
+
     </div>
     `;
     cards.append(card);
@@ -167,21 +169,8 @@ for(const imagen of menu){
         localStorage.setItem("productos",JSON.stringify(productos));
     })
 
-
-
-    let miBoton2 = document.getElementById(`miBoton2--${imagen.nombre}`);
-
-    miBoton2.addEventListener("click", (i) => {
-        i.preventDefault();
-        alert("Quitaste" + " " + imagen.nombre + " " +"del carrito");
-        console.log("Quitaste" + " " + imagen.nombre + " " +"del carrito");
-
-        localStorage.removeItem(productos);
-    })
-
+   
 }
-
-
 
 
 //HACER EL CHECKOUT
@@ -199,18 +188,15 @@ botonFinDeCompra.addEventListener ("click", (e) => {
     console.log (filtro)
 
     console.log ("El total a pagar es $" + checkOut)
+    
+    })
 
+    let botonVaciarCompra = document.getElementById("vaciar");
 
-
-})
-
-
-
-
-
-
-
-
-
+    botonVaciarCompra.addEventListener("click", (i) => {
+        i.preventDefault();
+        console.log("Vaciaste el carrito de compras");
+        localStorage.removeItem("productos",JSON.stringify(productos));
+    })
 
 
