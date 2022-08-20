@@ -49,6 +49,11 @@
                             <a class="nav-link boton" href="../pages/contacto.html">Contacto</a>
                         </li>
 
+                        <!-- Button trigger modal -->
+            <button id="toggleMyModal" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+                Ver carrito de compras <i class="bi bi-bag-check-fill"></i>
+            </button>
+
                 </div>
 
             </div>
@@ -56,20 +61,72 @@
         </nav>
     </header>
 
-    
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Carrito</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Cantidad</th>
+                                <th scope="col">Precio</th>
+                                <th scope="col">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody id="items"></tbody>
+                            <tfoot>
+                                <tr id="footer">
+                                <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
+                                </tr>
+                            </tfoot>
+                            </table>
+                        <div class="row" id="cards"></div>
+                    </div>
+                
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary">Terminar compra</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!--GALERIA DE PRODUCTOS -->
 
-    <main class="conteinerGaleria" class="row">
+    <main  class="conteinerGaleria" class="row">
 
         <div class="titleBar">
             <h2 class="titles"> Nuestros Productos</h2>
         </div>
 
-        <section id="galeria" class="row justify-content-center">
-
-
-
+        <section class="d-flex justify-content-center mt-5">
+            <article class="container">
+                <div id="contenedor-productos" class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="card m-3 p-3">
+                        <img src="img/brownie.jpg" class="card-img-top" alt="Brownie">
+                        <div class="card-body">
+                            <h5>Brownie</h5>
+                            <p>$123 USD</p>
+                            <button class="btn btn-success">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
         </section>
+
+        <section id= galeria class="row justify-content-center">
+        </section>
+
+       
+
         <button id="fin" class="fin"> Finalizar Compra </button>
         <button id="vaciar" class="fin"> Vaciar Carrito </button>
 
@@ -100,7 +157,7 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="../js/productos.js"></script>
+    <script src= "../js/productos2.js"></script>
 
 </body>
 </html>
