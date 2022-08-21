@@ -17,18 +17,22 @@ class itemsDelCarrito {
 
 const productos = [];
 
-const miCarrito = [];
+let miCarrito = [];
+
+//sintaxis optimizada//
+miCarrito = JSON.parse(localStorage.getItem('miCarrito')) || []
 
 
-const contenedorProductos = document.getElementById("contenedor-productos");
+
+
+const contenedorProductos = document.getElementById('contenedor-productos');
 
 const contenedorCarritoCompras = document.querySelector("#items");
 
 const contenedorFooterCarrito = document.querySelector("#footer");
 
-dibujarCatalogoProductos();
 cargarProductos();
-agregarAlCarrito();
+dibujarCatalogoProductos();
 dibujarCarrito();
 
 
@@ -38,21 +42,21 @@ dibujarCarrito();
         productos.push(new producto('Brownies con Nuez', 200,'../img/Budines/brownies.jpg', false));
         productos.push(new producto('Magdalen.as por Docena', 400,'../img/Budines/magdalenas.jpg', false));
         productos.push(new producto('Cookies de Chocolate', 220, "../img/Cookies/cookieschoco.jpg",true));
-        productos.push(new producto('Cookies con Chips', 250, "../img/Cookies/cookieschoco.jpg", false));
-        productos.push(new producto('Cookies Surtidas', 250, "../img/Cookies/cookieschoco.jpg", false));
-        productos.push(new producto('Pan de Salvado', 250, "../img/Cookies/cookieschoco.jpg", false));
-        productos.push(new producto('Trenza de Pan sin Semillas', 250, "../img/Cookies/cookieschoco.jpg", false));
-        productos.push(new producto('Trenza de Pan con Semillas', 250, "../img/Cookies/cookieschoco.jpg", false));
-        productos.push(new producto('Cañoncitos', 250, "../img/Cookies/cookieschoco.jpg", false));
-        productos.push(new producto('Vigilantes', 250, "../img/Cookies/cookieschoco.jpg", false));
-        productos.push(new producto('Medialunas', 250, "../img/Cookies/cookieschoco.jpg", false));
-        productos.push(new producto('Calamares Rellenos', 250, "../img/Cookies/cookieschoco.jpg", false));
-        productos.push(new producto('Locro', 250, "../img/Cookies/cookieschoco.jpg", false));
-        productos.push(new producto('Matambre', 250, "../img/Cookies/cookieschoco.jpg", false));
+        productos.push(new producto('Cookies con Chips', 250, "../img/Cookies/cookiesconchips.jpg", false));
+        productos.push(new producto('Cookies Surtidas', 250, "../img/Cookies/cookiesvarias.jpg", false));
+        productos.push(new producto('Pan de Salvado', 250, "../img/Panaderia/pandesalvado.jpg", false));
+        productos.push(new producto('Trenza de Pan sin Semillas', 250, "../img/Panaderia/pantrenza2.jpg", false));
+        productos.push(new producto('Trenza de Pan con Semillas', 250, "../img/Panaderia/pansemillas.jpg", false));
+        productos.push(new producto('Cañoncitos', 250, "../img/Facturas/cañoncitos.jpg", false));
+        productos.push(new producto('Vigilantes', 250, "../img/Facturas/facturasvarias2.jpg", false));
+        productos.push(new producto('Medialunas', 250, "../img/Facturas/medialunas.jpg", false));
+        productos.push(new producto('Calamares Rellenos', 250, "../img/ComidaSalada/calamaresrellenos.jpg", false));
+        productos.push(new producto('Locro', 250, "../img/ComidaSalada/locro3.jpg", false));
+        productos.push(new producto('Matambre', 250, "../img/ComidaSalada/matambrecasero.jpg", false));
     }
 
 
-    function agregarAlCarrito() {
+    function dibujarCarrito() {
 
         let precioFinal = 0;
         contenedorCarritoCompras.innerHTML = "";
@@ -63,17 +67,19 @@ dibujarCarrito();
                 
                 renglonesCarrito.innerHTML = `
                     <td>${elemento.producto.nombre}</td>
-                    <td><input id="cantidad-producto-${elemento.producto.nombre}" type="number" value="${elemento.cantidad}" min="1" max="1000" step="1" style="width: 50px;"/></td>
+                    <td><input id="cantidad-producto-${elemento.producto.nombre}" type="number" value="${elemento.cantidad}" min="1" max="50" step="1" style="width: 50px;"/></td>
                     <td>$ ${elemento.producto.precio}</td>
                     <td>$ ${elemento.producto.precio*elemento.cantidad}</td>
                 `;
     
                 contenedorCarritoCompras.append(renglonesCarrito);
-    
-                precioFinal+=elemento.cantidad*elemento.menu.precio;
+
+                
+                //sintaxis optimizada//
+                precioFinal+=elemento.cantidad*elemento.producto.precio;
     
                 //agregamos evento a carrito
-                let cantidadProductos = document.getElementById(`cantidad-producto-${elemento.producto.id}`);
+                let cantidadProductos = document.getElementById(`cantidad-producto-${elemento.producto.nombre}`);
                 
                 cantidadProductos.addEventListener("change", (e) => {
                     let nuevaCantidad = e.target.value;
@@ -83,18 +89,11 @@ dibujarCarrito();
     
             }
         );
-    
-        //contenedorCarritoCompras.innerHTML = renglonesCarrito;
         
-        if(miCarrito.length == 0) {
-            miCarrito.innerHTML = `
-                <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
-            `;
-        } else {
-            miCarrito.innerHTML = `
-                <th scope="row" colspan="5">Total de la compra: $${sumaCarrito}</th>
-            `;
-        }
+        //sintaxis optimizada//
+        miCarrito.length === 0 ? contenedorFooterCarrito.innerHTML = `<th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>`:
+            contenedorFooterCarrito.innerHTML = `<th scope="row" colspan="5">Total de la compra: $${precioFinal}</th>`;
+        
     
     }   
 
@@ -129,14 +128,15 @@ dibujarCarrito();
         botonAgregar.onclick = () => {
             //alert("Hiciste click en el producto" + producto.nombre);
     
-            let itemaComprar= new ElementoCarrito(producto, 1);
+            let itemaComprar= new itemsDelCarrito(producto, 1);
             miCarrito.push(itemaComprar);
+            localStorage.setItem("miCarrito",JSON.stringify(miCarrito));
     
             dibujarCarrito();
     
             swal({
                 title: "¡Producto agregado!",
-                text: `${listado.nombre} agregado al carrito de compra.`,
+                text: `${producto.nombre} agregado al carrito de compra.`,
                 icon: "success",
                 buttons: {
                     cerrar: {
@@ -166,7 +166,7 @@ dibujarCarrito();
     }
 
     function dibujarCatalogoProductos() {
-       
+        contenedorProductos.innerHTML = "";
     
         productos.forEach(
             (producto) => {
