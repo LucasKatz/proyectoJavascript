@@ -1,3 +1,5 @@
+AOS.init ();
+
 class producto{
     constructor (nombre,precio, fuente, celiacos){
     this.nombre = nombre;
@@ -37,10 +39,11 @@ dibujarCarrito();
 
 
 
+
     function cargarProductos() {
         productos.push(new producto('Brownies con Dulce de Leche', 180,'../img/Budines/Brownie.jpg', false));
         productos.push(new producto('Brownies con Nuez', 200,'../img/Budines/brownies.jpg', false));
-        productos.push(new producto('Magdalen.as por Docena', 400,'../img/Budines/magdalenas.jpg', false));
+        productos.push(new producto('Magdalenas por Docena', 400,'../img/Budines/magdalenas.jpg', false));
         productos.push(new producto('Cookies de Chocolate', 220, "../img/Cookies/cookieschoco.jpg",true));
         productos.push(new producto('Cookies con Chips', 250, "../img/Cookies/cookiesconchips.jpg", false));
         productos.push(new producto('Cookies Surtidas', 250, "../img/Cookies/cookiesvarias.jpg", false));
@@ -116,12 +119,14 @@ dibujarCarrito();
         let imagen = document.createElement("img");
         imagen.src = producto.fuente;
         imagen.className = "card-img-top";
+        imagen.style= "height: 480px"
         imagen.alt = producto.nombre;
     
         //Card
         let carta = document.createElement("div");
         carta.className = "card m-2 p-2";
-        carta.style = "width: 18rem";
+        carta.style = "width: 18rem ";
+  
         carta.append(imagen);
         carta.append(cuerpoCarta);
 
@@ -177,3 +182,10 @@ dibujarCarrito();
     
     }
    
+    let botonVaciarCompra = document.getElementById("Finish");
+
+    botonVaciarCompra.addEventListener("click", (i) => {
+        i.preventDefault();
+        localStorage.removeItem("miCarrito",JSON.stringify(miCarrito));
+    
+    })
