@@ -7,7 +7,9 @@
     <meta name="description" content="Ofrecemos productos de pasteleria y comidas tipicas de distintas regiones del mundo. Contamos con años de trayectoria y una larga cantidad de clientes satisfechos.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./Css/estilos.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://kit.fontawesome.com/824eac08d1.js" crossorigin="anonymous"></script>
     <title>Alifer Pasteleria</title>
 </head>
@@ -48,6 +50,10 @@
                         <a class="nav-link active boton"  aria-current="page" href="./pages/contacto.html">Contacto</a>
                     </li>
 
+                    <button id="1234" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+                        <i class='fas fa-shopping-cart' style='font-size:36px'></i>
+                        </button>>
+
                 </div>
 
             </div>
@@ -55,6 +61,46 @@
         </nav>
 
     </header>
+
+     <!-- Modal -->
+     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Carrito</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Cantidad</th>
+                                <th scope="col">Precio</th>
+                                <th scope="col">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody id="items"></tbody>
+                            <tfoot>
+                                <tr id="footer">
+                                <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
+                                </tr>
+                            </tfoot>
+                            </table>
+                        <div class="row" id="cards"></div>
+                    </div>
+                
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                
+                <a href="../index.html" id = "Finish" class="btn btn-secondary"> Terminar compra </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
                     <!--FOTO DE PERFIL -->
     <main class="info">
@@ -65,7 +111,7 @@
                 <div class="col-md-5 foto">
                     <img src="img/chef3.jpg" class="alifer2" alt="cocineras">
                 </div>
-                <div class="col-md-7 animate__animated animate__backInUp">
+                <div data-aos="fade-up" class="col-md-7">
 
                     <strong class="names" style="text-align:center;">Alicia Rossetto - Fernanda Hidalgo</strong>
 
@@ -81,7 +127,7 @@
 
                     <!--SLOGAN -->
 
-        <article class="desafio1 animate__animated animate__backInUp">
+        <article data-aos="fade-up" class="desafio1">
             <h2 class="slogan"> Una Amistad con Tradición de Cosas Ricas</h2>
             <p class="nos"> A nosotras nos encanta cocinar y disfrutamos de la buena cocina, los sabores, los aromas y las bellas decoraciones de los distintos platos nos fascina. Por eso, elegimos formarnos y asi aprender, para poder combinar nuestra pasión por la  comida casera con platos elaborados de la cocina internacional. Nuestra especialidad: "La Pasteleria". </p>
 
@@ -89,7 +135,7 @@
 
                     <!--FECHAS IMPORTANTES DE GASTRONOMIA -->
 
-            <div class="festivo animate__animated animate__backInLeft">
+            <div data-aos="fade-up" class="festivo">
                 <a href="./pages/festividades.html"><img src="img/calendar.jpg" class="img-thumbnail calendar" alt="calendario" height="400" width="800"></a>
             </div>
 
@@ -119,7 +165,11 @@
             </div>
         </div>
     </footer>
-    <script src="./js/extension.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="sweetalert2.all.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./js/extension.js"></script>
+    <script src="./js/productos2.js"></script>
 </body>
 </html>
