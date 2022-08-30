@@ -187,5 +187,21 @@ dibujarCarrito();
     botonVaciarCompra.addEventListener("click", (i) => {
         i.preventDefault();
         localStorage.removeItem("miCarrito",JSON.stringify(miCarrito));
+
+        const URLPOST="https://jsonplaceholder.typicode.com/posts";
+        const nuevaOrden= miCarrito
+        fetch(URLPOST,{
+        method:'POST',
+        body:JSON.stringify(nuevaOrden),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        }
+    })
+        .then( respuesta => respuesta.json())
+        .then( datos => {
+            //lo que retorna
+            console.log("Detalles de su orden: ");
+            console.log(datos);
+        })
     
     })
