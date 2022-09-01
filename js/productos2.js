@@ -72,7 +72,9 @@ dibujarCarrito();
                     <td>${elemento.producto.nombre}</td>
                     <td><input id="cantidad-producto-${elemento.producto.nombre}" type="number" value="${elemento.cantidad}" min="1" max="50" step="1" style="width: 50px;"/></td>
                     <td>$ ${elemento.producto.precio}</td>
+                    <td> <button class=btn btn-light onclick=eliminar(${elemento.producto})>🗑️</button>
                     <td>$ ${elemento.producto.precio*elemento.cantidad}</td>
+     
                 `;
     
                 contenedorCarritoCompras.append(renglonesCarrito);
@@ -98,7 +100,27 @@ dibujarCarrito();
             contenedorFooterCarrito.innerHTML = `<th scope="row" colspan="5">Total de la compra: $${precioFinal}</th>`;
         
     
-    }   
+      
+
+//eliminar productos del carrito
+    function eliminar(elemento){
+        let indice=miCarrito.find(el => el.nombre===nombre);
+        miCarrito.splice(indice,1);//eliminando del carro
+        let fila=document.getElementById(`fila${elemento.producto}`);
+        document.getElementById("tabla").removeChild(fila);//eliminando de la tabla
+        localStorage.setItem("miCarrito",JSON.stringify(miCarrito));
+        Swal.fire("Producto eliminado del carro!")
+        dibujarCarrito();
+    }
+
+    let botonEliminar = document.querySelector ("#eliminar")
+    botonEliminar.addEventListener("click", (i) => {
+        i.preventDefault();
+        eliminar ();
+    });  
+
+}
+    
 
     function crearCard(producto) {
         //Botón
