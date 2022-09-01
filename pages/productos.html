@@ -78,7 +78,8 @@
                                 <th scope="col">Nombre</th>
                                 <th scope="col">Cantidad</th>
                                 <th scope="col">Precio</th>
-                                <th scope="col">Total</th>
+                                <th id = "eliminar"scope="col">Eliminar</th>
+                                <th id= "totalCompra" scope="col">Total</th>
                                 </tr>
                             </thead>
                             <tbody id="items"></tbody>
@@ -94,7 +95,8 @@
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button  id = "Finish" type="button" class="btn btn-primary">Terminar compra</button>
+                
+                <a href="../index.html" id = "Finish" class="btn btn-secondary"> Terminar compra </a>
                 </div>
             </div>
         </div>
@@ -152,6 +154,5 @@
         AOS.init();
       </script>
     <script src= "../js/productos2.js"></script>
-
 </body>
 </html>
