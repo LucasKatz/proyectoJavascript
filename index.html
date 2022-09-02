@@ -51,8 +51,12 @@
                     </li>
 
                     <button id="1234" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >
-                        <i class='fas fa-shopping-cart' style='font-size:36px'></i>
-                        </button>>
+                        <i class='fas fa-shopping-cart' style='font-size:18px'></i>
+                        </button>
+
+                        <button id="loguearse" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registro" >
+                            <i class="fa-solid fa-user"></i>
+                            </button>    
 
                 </div>
 
@@ -101,7 +105,45 @@
         </div>
     </div>
 
+     <!-- Modal de Login/Registro-->
+     <div class="modal" id= registro tabindex="-1" role="dialog" aria-labelledby="user">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="user">Registro</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form id = "registroNuevoUsuario" action="">
+                <h6>Registrar Nuevo Usuario</h6>
+                <input type="text" id= nombre    placeholder= "Ingrese su nombre"    value = >
+                <input type="text" id= apellido  placeholder= "Ingrese su apellido"  value = >
+                <input type="text" id= correo    placeholder= "Ingrese su Email"     value = >
+                <input type="text" id= domicilio placeholder= "Ingrese su Domicilio" value =>
+                <input type="text" id= usuario    placeholder= "Ingrese su Usuario"    value = >
+                <input type="text" id= contraseña  placeholder= "Ingrese su Contraseña"  value = >
+              </form>
 
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Submit</button>
+              </div>
+
+              <form id= "ingreso" action="">
+                <h6>Ingresar</h6>
+                <input type="text" id= usuario    placeholder= "Usuario"    value = >
+                <input type="text" id= contraseña  placeholder= "Contraseña"  value = >
+
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+   
                     <!--FOTO DE PERFIL -->
     <main class="info">
         <section class="perfil">
