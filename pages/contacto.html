@@ -8,7 +8,16 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="../Css/estilos.css">
+    <script defer src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://kit.fontawesome.com/824eac08d1.js" crossorigin="anonymous"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("p6f7wOvoBduW38JNb");
+        })();
+    </script>
     <title>Formulario de Contacto</title>
 </head>
 
@@ -64,24 +73,27 @@
             <h1 class="mensaje text-center">Comunicate con Nosotras</h1>
 
             <div class="flex__container">
-                <form class="form" action="enviar.php" method="post" enctype="text/plain">
+                <form class="form" action="https://formsubmit.co/your@email.com"  method="POST" enctype="text/plain">
                     <div class="form__section">
-                        <input class="form__input" type="text" name="name" required placeholder="Nombre">
+                        <input class="form__input" type="text" id="name" name="name" required placeholder="Nombre">
                     </div>
 
                     <div class="form__section">
-                        <input class="form__input" type="number" name="telefono" required placeholder="Numero de Contacto">
+                        <input class="form__input" type="email" id="email" name="email" required placeholder="Email">
+                    </div>
+                    
+                    <div class="form__section">
+                        <input class="form__input" type="number" id="telefono" name="subject" required placeholder="Numero de Contacto">
                     </div>
 
                     <div class="form__section">
-                        <input class="form__input" type="email" name="email" required placeholder="Email">
+                        <textarea class="form__input" id="mensaje" name="comments" placeholder="Escriba su mensaje"></textarea>
                     </div>
 
-                    <div class="form__section">
-                        <textarea class="form__input" placeholder="Escriba su mensaje"></textarea>
-                    </div>
+                    <input type="hidden" name="_captcha" value="false">
+
                     <div>
-                        <input type="submit" class="form__input" id="button">
+                        <button onclick = 'sendMail'  class="form__input" type="submit" id="button">Enviar</button>
                     </div>
                 </form>
 
@@ -119,6 +131,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="../js/contacto.js"></script>
 
 </body>
 </html>
