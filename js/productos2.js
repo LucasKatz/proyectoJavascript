@@ -204,6 +204,7 @@ function dibujarCatalogoProductos() {
 let botonVaciarCompra = document.getElementById("Finish");
 
 botonVaciarCompra.addEventListener("click", (i) => {
+    i.preventDefault();
     if (miCarrito.length !== 0){
         swal({
        position: 'center',
@@ -211,11 +212,10 @@ botonVaciarCompra.addEventListener("click", (i) => {
        text: 'Tu compra fue realizada con exito',
        title: 'Gracias por tu compra',
        button: false,
-       timer: 2000
        })
        
        
-       const URLPOST = "https://jsonplaceholder.typicode.com/posts";
+       const URLPOST = "https://formsubmit.io/send/l.katz92@gmail.com";
        const nuevaOrden = miCarrito
        fetch(URLPOST, {
            method: 'POST',
