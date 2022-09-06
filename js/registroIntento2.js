@@ -1,52 +1,58 @@
-const  formRegistro = document.getElementById ("registroNuevoUsuario")
-const  formIngreso = document.getElementById ("ingreso")
-const  nombre=document.getElementById ("nombre")
-const  email=document.getElementById ("correo")
-const  domicilio=document.getElementById ("domicilio")
-const contraseña = document.getElementById ("contraseña")
+const frmLogin = document.getElementById("frm-register");
+const fullName = document.getElementById("fullName");
+const userName = document.getElementById("userName");
+const password = document.getElementById("password");
+const confirmPassword = document.getElementById("confirmPassword");
 
-
-const usuarioRegistrado = []
+const userRegistered = [];
 let id = 0;
 
-formRegistro.addEventListener ("submit" , registrarUsuario)
+frmLogin.addEventListener("submit", RegisterUser);
 
-
-
-function registrarUsuario(registro) {
-
-    registro.preventDefault();
-
-    id++ ;
-
-    const nuevoUsuario = {
-    
+// Registrar Usuario
+function RegisterUser(event) {
+  // Prevenir los eventos precargados  
+  event.preventDefault();
+  // agregar automáticamente un ID
+   id++;
+  // Crear usuario objeto
+  const user = {
     id: id,
-    nombre: nombre.value,
-    email: email.value,
-    domicilio: domicilio.value,
-    contraseña:contraseña.value
-    };
-
-    if (
-        nombre.value=== "" ||
-        email.value=== "" ||
-        domicilio.value=== "" ||
-        contraseña.value=== "" 
-
-    ){
-        alert (" Por favor complete todos los datos");
+    nameFull: fullName.value,
+    user: userName.value,
+    pass: password.value,
+    confPassword: confirmPassword.value
+  };
+  // Validar que los campos no estén vacíos
+  if (
+    fullName.value === "" ||
+    userName.value === "" ||
+    password.value === "" ||
+    confirmPassword.value === ""
+    ) {
+      alert("Por favor llene todos los campos");
     }
-
-    else if (usuario.find (usuario =>usuario.usuario === usuario.value )){
-        alert ("El usuario ya existe")
-
-    }
-
-    else {
-        usuarioRegistrado.push (nuevoUsuario)
-
-        localStorage.setItem ("nuevoUsuario", JSON.stringify(usuarioRegistrado));
-        alert("Usuario registrado con éxito")
-    }
+    // Validar que las contraseñas coincidan
+  else if (password.value !== confirmPassword.value) {
+    alert("Las contraseñas no coinciden");
+  }
+  // Validar que el usuario no exista
+  else if (userRegistered.find(user => user.user === userName.value)) {
+    alert("El usuario ya existe");
+  }
+  // Validar que el usuario no exista
+  else {
+    // Agregar usuario
+    userRegistered.push(user);
+    // guardar array en localStorage
+    localStorage.setItem("user",JSON.stringify(userRegistered));              
+    alert("Usuario registrado con éxito");
+    // Limpiar campos
+    fullName.value = "";
+    userName.value = "";
+    password.value = "";
+    confirmPassword.value = "";    
+  }
 }
+
+
