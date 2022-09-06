@@ -52,11 +52,15 @@
 
                     <button id="1234" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >
                         <i class='fas fa-shopping-cart' style='font-size:18px'></i>
-                        </button>
+                    </button>
 
-                        <button id="loguearse" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registro" >
-                            <i class="fa-solid fa-user"></i>
-                            </button>    
+                    <button id="loguearse" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registro" >
+                        <i class="fa-solid fa-user"></i>
+                    </button>    
+                    
+                    <button id="loguearse" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#logIn" >
+                        <i class="fa-solid fa-user"></i>
+                    </button>          
 
                 </div>
 
@@ -105,42 +109,51 @@
         </div>
     </div>
 
-     <!-- Modal de Login/Registro-->
+     <!-- Modal deRegistro-->
      <div class="modal" id= registro tabindex="-1" role="dialog" aria-labelledby="user">
         <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="user">Registro</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <form id = "registroNuevoUsuario" action="">
-                <h6>Complete el formulario con sus datos</h6>
-                <input type="text" id= nombre    placeholder= "Nombre Completo"    value = >
-                <input type="text" id= usuario    placeholder= "Usuario"    value = >
-                <input type="password" id= contraseña  placeholder= "Contraseña"  value = >
-                <input type="password" id= confContraseña  placeholder= "Reingresar Contraseña"  value = >
-              </form>
-
-              <div class="modal-footer">
-                <div class="buttons">
-                    <button id = "registrarse" type="button" class="btn btn-primary">Registrarse</button>        
-                  </div>         
-              </div>
-
-              <form id= "ingreso" action="">
-                <h6>Ingresar</h6>
-                <input  type="text" id= usuario    placeholder= "Usuario"    value = >
-                <input type="text" id= contraseña  placeholder= "Contraseña"  value = >
-
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button id = "submit2" type="button" class="btn btn-primary">Ingresar</button>
-            </div>
-          </div>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="user">Registro</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="frm-register" action="">        
+                        <input id="fullName" type="text" placeholder="Full Name" value="">
+                        <input id="userName" type="text" placeholder="userName" value="">
+                        <input id="password" type="password" placeholder="Insert your password" value="">
+                        <input id="confirmPassword" type="password" placeholder="confirm your password" value="">
+                        <div class="buttons">
+                        <input class="myButton" type="submit" value="Register">
+                    </form>      
+                </div>            
+            </div>  
         </div>
-      </div>
+     </div>
+    </div>
+
+    <!-- Modal LogIn-->
+    <div class="modal" id= logIn tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="Ingresar">Ingresar</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="frm-Login" action="">        
+                        <input id="userName" type="text" placeholder="Usuario" value="">
+                        <input id="password" type="password" placeholder="Contraseña" value="">        
+                        <div class="buttons">
+                          <button id="ingreso" class="myButton">Login</button>
+                        </div>      
+                    </form>      
+                </div>            
+            </div>  
+        </div>
+     </div>
+    </div>
+  
    
                     <!--FOTO DE PERFIL -->
     <main class="info">
@@ -210,7 +223,8 @@
  
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./js/extension.js"></script>
-   <!-- <script src="./js/registro.js"></script>-->
     <script src="./js/registroIntento2.js"></script>
+    <script src="./js/productos2.js"></script>
+    <script src="./js/validacion.js"></script>
 </body>
 </html>
