@@ -1,13 +1,17 @@
-const frmLogin = document.getElementById("frm-register");
+const frmRegistro = document.getElementById("frm-register");
 const fullName = document.getElementById("fullName");
 const userName = document.getElementById("userName");
 const password = document.getElementById("password");
 const confirmPassword = document.getElementById("confirmPassword");
 
 const userRegistered = [];
+
+const getLocal = localStorage.getItem("user");
+const validateUser = JSON.parse(getLocal); 
 let id = 0;
 
-frmLogin.addEventListener("submit", RegisterUser);
+frmRegistro.addEventListener("submit", RegisterUser);
+ 
 
 // Registrar Usuario
 function RegisterUser(event) {
@@ -37,7 +41,7 @@ function RegisterUser(event) {
     alert("Las contraseñas no coinciden");
   }
   // Validar que el usuario no exista
-  else if (userRegistered.find(user => user.user === userName.value)) {
+  else if (validateUser.find(user => user.user === userName.value)) {
     alert("El usuario ya existe");
   }
   // Validar que el usuario no exista
@@ -54,5 +58,6 @@ function RegisterUser(event) {
     confirmPassword.value = "";    
   }
 }
+
 
 
