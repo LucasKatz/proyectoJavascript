@@ -215,7 +215,7 @@ botonVaciarCompra.addEventListener("click", (i) => {
        })
        
        
-       const URLPOST = "https://formsubmit.io/send/l.katz92@gmail.com";
+       const URLPOST = "https://jsonplaceholder.typicode.com/posts";
        const nuevaOrden = miCarrito
        fetch(URLPOST, {
            method: 'POST',
