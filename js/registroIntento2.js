@@ -48,6 +48,7 @@ function RegisterUser(event) {
   else {
     // Agregar usuario
     userRegistered.push(user);
+    console.table(user)
     // guardar array en localStorage
     localStorage.setItem("user",JSON.stringify(userRegistered));              
     alert("Usuario registrado con éxito");
