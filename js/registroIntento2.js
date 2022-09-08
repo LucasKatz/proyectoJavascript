@@ -8,20 +8,22 @@ const userRegistered = [];
 
 const getLocal = localStorage.getItem("user");
 const validateUser = JSON.parse(getLocal); 
-let id = 0;
+
 
 frmRegistro.addEventListener("submit", RegisterUser);
  
 
 // Registrar Usuario
 function RegisterUser(event) {
+
+
+  const getLocal = localStorage.getItem("user");
+  const validateUser = JSON.parse(getLocal); 
   // Prevenir los eventos precargados  
   event.preventDefault();
-  // agregar automáticamente un ID
-   id++;
+
   // Crear usuario objeto
   const user = {
-    id: id,
     nameFull: fullName.value,
     user: userName.value,
     pass: password.value,
