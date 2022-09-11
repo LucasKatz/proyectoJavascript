@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./Css/estilos.css">
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script defer src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://kit.fontawesome.com/824eac08d1.js" crossorigin="anonymous"></script>
     <title>Alifer Pasteleria</title>
 </head>
@@ -18,17 +18,32 @@
     <header>
                     <!-- BARRA DE NAVEGACION-->
 
+                <button id="cart" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+                    <i class='fas fa-shopping-cart' style='font-size:18px'></i>
+                </button>
+        
+                <button id="reg" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registro" >
+                    <i class="fa-solid fa-user"></i>
+                </button>    
+                    
+                <button id="log" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#logIn" >
+                    <i class="fa-solid fa-user"></i>
+                </button>
+                    
+                    
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
 
                 <a href="./index.html"><img src="./img/AliFer.png" class="logo  animate__heartBeat" height="190px"></a>
-
+                
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+            
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
 
                     <li class="nav-item">
                         <a class="nav-link active boton"  aria-current="page" href="./index.html">Principal</a>
@@ -50,17 +65,6 @@
                         <a class="nav-link active boton"  aria-current="page" href="./pages/contacto.html">Contacto</a>
                     </li>
 
-                    <button id="1234" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >
-                        <i class='fas fa-shopping-cart' style='font-size:18px'></i>
-                    </button>
-
-                    <button id="loguearse" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registro" >
-                        <i class="fa-solid fa-user"></i>
-                    </button>    
-                    
-                    <button id="loguearse" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#logIn" >
-                        <i class="fa-solid fa-user"></i>
-                    </button>          
 
                 </div>
 
@@ -68,9 +72,9 @@
 
         </nav>
 
-    </header>
+    
 
-     <!-- Modal -->
+     <!-- Modal Carrito-->
      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -124,7 +128,7 @@
                         <input id="password" type="password" placeholder="Insert your password" >
                         <input id="confirmPassword" type="password" placeholder="confirm your password" >
                         <div class="buttons">
-                        <input class="myButton" type="submit" value="Register">
+                        <input class="myButton btn btn-warning" type="submit" value="Register">
                     </form>      
                 </div>            
             </div>  
@@ -145,7 +149,7 @@
                         <input id="userNombre" type="text" placeholder="Usuario" >
                         <input id="contraseña" type="password" placeholder="Contraseña" >        
                         <div class="buttons">
-                          <button id="ingreso" class="myButton">Login</button>
+                          <button id="ingreso" class="myButton btn btn-warning">Login</button>
                         </div>      
                     </form>      
                 </div>            
@@ -153,7 +157,7 @@
         </div>
      </div>
     </div>
-  
+</header>
    
                     <!--FOTO DE PERFIL -->
     <main class="info">
