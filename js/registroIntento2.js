@@ -36,15 +36,30 @@ function RegisterUser(event) {
     password.value === "" ||
     confirmPassword.value === ""
     ) {
-      alert("Por favor llene todos los campos");
+      swal({
+        position: 'center',
+        icon: "warning",
+        title: 'Por favor llene todos los campos',
+        button: true,
+        })
     }
     // Validar que las contraseñas coincidan
   else if (password.value !== confirmPassword.value) {
-    alert("Las contraseñas no coinciden");
+    swal({
+      position: 'center',
+      icon: "error",
+      title: 'Las contraseñas no coinciden',
+      button: true,
+      })
   }
   // Validar que el usuario no exista
   else if (validateUser.find(user => user.user === userName.value)) {
-    alert("El usuario ya existe");
+    swal({
+      position: 'center',
+      icon: "warning",
+      title: 'El usuario ya existe',
+      button: true,
+      })
   }
   // Validar que el usuario no exista
   else {
@@ -53,7 +68,13 @@ function RegisterUser(event) {
     console.table(user)
     // guardar array en localStorage
     localStorage.setItem("user",JSON.stringify(userRegistered));              
-    alert("Usuario registrado con éxito");
+    swal({
+      position: 'center',
+      icon: "success",
+      text: 'Bienvenido a las cocinas de AliFer Pasteleria',
+      title: 'Usuario registrado con éxito',
+      button: false,
+      })
     // Limpiar campos
     fullName.value = "";
     userName.value = "";
