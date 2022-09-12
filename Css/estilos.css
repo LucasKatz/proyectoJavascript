@@ -14,7 +14,9 @@ nav {
 }
 
 nav .logo {
-  margin-right: 50px;
+  margin-top: -50px;
+  margin-right: 60px;
+ 
 }
 
 nav ul {
@@ -48,6 +50,29 @@ nav .boton {
   background-repeat: no-repeat;
   background-size: 0% 4px;
 }
+
+#cart{
+  background-color: #b17f48;
+  margin-top: 20px;
+  margin-left: 310px;
+
+}
+
+
+#reg{
+  background-color: #b17f48;
+  margin-top: 20px;
+  margin-left: 10px;
+
+}
+
+#log {
+  background-color: #b17f48;
+  margin-top: 20px;
+  margin-left: 10px;
+  
+}
+
 
 nav .boton:hover, nav a:focus {
   background-size: 100% 6px;
@@ -148,6 +173,7 @@ footer #fondoFooter {
 footer #fondoFooter .redes {
   font-size: larger;
   font-family: "Pacifico", cursive;
+  color: white;
 }
 
 footer #fondoFooter .Instagram {
@@ -168,11 +194,13 @@ footer #fondoFooter .fa-facebook, footer #fondoFooter .fa-instagram, footer #fon
 footer #fondoFooter .n1 {
   list-style: none;
   font-family: "Pacifico", cursive;
+  color: white;
 }
 
 footer #fondoFooter .n2 {
   list-style: none;
   font-family: "Pacifico", cursive;
+  color: white;
 }
 
 footer .Cen .map {
@@ -371,6 +399,7 @@ main .video {
 .formulario #button {
   width: 160px;
   justify-items: center;
+  background-color: #b17f48;
 }
 
 .formulario .form__input:focus {
@@ -466,7 +495,18 @@ main .video {
         grid-template-columns: repeat(2, 1fr);
     -ms-grid-rows: (1fr)[12];
         grid-template-rows: repeat(12, 1fr);
-        grid-template-areas: "budines   cookies" "brownies1 cookies1" "brownies2 cookies2" "brownies3 cookies3" "panaderia facturas" "panificados 1 facturas 1" "panificados2 facturas2" "panificados3 facturas3" ".            salado" ".            salado1" ".            salado2" ".            salado3";
+        grid-template-areas: "budines   cookies"
+ "brownies1 cookies1"
+ "brownies2 cookies2"
+ "brownies3 cookies3"
+ "panaderia facturas"
+ "panificados 1 facturas 1"
+ "panificados2 facturas2"
+ "panificados3 facturas3"
+ ".            salado"
+ ".            salado1"
+ ".            salado2"
+ ".            salado3";
   }
   .conteinerGaleria #galeria img {
     justify-items: center;
