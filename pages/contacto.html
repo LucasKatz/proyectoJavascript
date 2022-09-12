@@ -84,7 +84,7 @@
 
 
 
-<!-- Modal -->
+<!-- Modal Carrito-->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog">
 <div class="modal-content">
@@ -179,6 +179,9 @@
 
             <div class="flex__container">
                 <form action="https://formsubmit.io/send/l.katz92@gmail.com" method="POST" class="form" >
+
+                    <input name="_redirect" type="hidden" id="name" value="https://master--aliferpasteleria.netlify.app/index.html">
+
                     <div class="form__section">
                         <input type="text" name="name" required class="form__input"  placeholder="Nombre">
                     </div>
@@ -192,7 +195,7 @@
                     </div>
 
                     <div class="form__section">
-                        <textarea  type="text"  name="subject" id="mensaje" class="form__input"  placeholder="Escriba su mensaje"></textarea>
+                        <textarea  type="text"  name="subject" id="mensaje" class="form__input"  placeholder="Escriba su mensaje" required></textarea>
                     </div>
 
                     <div>
