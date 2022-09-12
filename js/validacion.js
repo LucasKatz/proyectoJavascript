@@ -23,19 +23,40 @@ function LoginUser(event) {
 
   // Validar que los campos no estén vacíos
   if (userNombre.value === "" || contraseña.value === "") {
-    alert("Por favor llene todos los campos");
+    swal({
+      position: 'center',
+      icon: "warning",
+      title: 'Por favor llene todos los campos',
+      button: true,
+      })
   }
   // Validar que el usuario exista
   else if (!validarUsuario.find(user => user.user === userNombre.value)) {
-    alert("El usuario no existe");
+    swal({
+      position: 'center',
+      icon: "warning",
+      title: 'El usuario no existe',
+      button: true,
+      })
   }
   // Validar que la contraseña coincida
   else if (
     validarUsuario.find(user => user.user === userNombre.value).pass !== contraseña.value) {
-      alert("La contraseña no coincide");
+      swal({
+        position: 'center',
+        icon: "error",
+        title: 'La contraseña no coincide',
+        button: true,
+        })
     }
   else {
-    alert("Usuario logueado con éxito");
+    swal({
+      position: 'center',
+      icon: "success",
+      text: 'Bienvenido a las cocinas de AliFer Pasteleria',
+      title: 'Usuario logueado con éxito',
+      button: false,
+      })
     // Ir a otra página desde JavaScript
   }      
 }
