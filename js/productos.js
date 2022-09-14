@@ -159,23 +159,23 @@ function crearCard(producto) {
 
         let itemaComprar = new itemsDelCarrito(producto, 1);
 
-        let encontrado = miCarrito.find(p => itemaComprar == p.nombre);
-        console.log(encontrado);
-        if (encontrado !== undefined) {
-            let posicion = miCarrito.findIndex(p => itemaComprar == p.nombre);
-            console.log(posicion);
-            miCarrito[posicion].cantidad += 1;
+        //let encontrado = miCarrito.find(p => itemaComprar == p.nombre);
+        //console.log(encontrado);
+        //if (encontrado !== undefined) {
+            //let posicion = miCarrito.findIndex(p => itemaComprar == p.nombre);
+            //console.log(posicion);
+            //miCarrito[posicion].cantidad += 1;
             //con querySelector falla
             //document.getElementById(productoNuevo.id).innerHTML=carrito[posicion].cantidad;
             miCarrito.push(itemaComprar);
-        }
+        //}
         localStorage.setItem("miCarrito", JSON.stringify(miCarrito));
 
         dibujarCarrito();
 
         swal({
             title: "¡Producto agregado!",
-            text: `${producto.nombre} agregado al carrito de compra.`,
+            text: "Seleccione desde el carrito de compras la cantidad a comprar",
             icon: "success",
             buttons: {
                 cerrar: {
