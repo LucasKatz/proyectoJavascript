@@ -79,7 +79,8 @@ function RegisterUser(event) {
     fullName.value = "";
     userName.value = "";
     password.value = "";
-    confirmPassword.value = "";    
+    confirmPassword.value = "";  
+    setTimeout( function() { window.location.href = "https://master--aliferpasteleria.netlify.app/index.html"; }, 2000 );
   }
 }
 

@@ -58,5 +58,6 @@ function LoginUser(event) {
       button: false,
       })
     // Ir a otra página desde JavaScript
+    setTimeout( function() { window.location.href = "https://master--aliferpasteleria.netlify.app/index.html"; }, 2000 );
   }      
 }
