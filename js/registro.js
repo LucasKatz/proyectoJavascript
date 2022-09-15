@@ -2,6 +2,8 @@ AOS.init ();
 const frmRegistro = document.getElementById("frm-register");
 const fullName = document.getElementById("fullName");
 const userName = document.getElementById("userName");
+const  email=document.getElementById ("correo")
+const  telefono=document.getElementById ("telefono")
 const password = document.getElementById("password");
 const confirmPassword = document.getElementById("confirmPassword");
 
@@ -34,6 +36,8 @@ function RegisterUser(event) {
   if (
     fullName.value === "" ||
     userName.value === "" ||
+    email.value === "" ||
+    telefono.value === "" ||
     password.value === "" ||
     confirmPassword.value === ""
     ) {
@@ -79,6 +83,8 @@ function RegisterUser(event) {
     // Limpiar campos
     fullName.value = "";
     userName.value = "";
+    email.value = ""; 
+    telefono.value = ""; 
     password.value = "";
     confirmPassword.value = "";  
     setTimeout( function() { window.location.href = "https://master--aliferpasteleria.netlify.app/index.html"; }, 2000 );
