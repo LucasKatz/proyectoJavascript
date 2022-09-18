@@ -107,7 +107,8 @@ function dibujarCarrito() {
 
 //eliminar productos del carrito
 function eliminar(nombre) {
-    let indice = miCarrito.find(el => el.nombre == nombre);
+    let item = miCarrito.find(el => el.nombre === nombre);
+    let indice= miCarrito.indexOf(item);
     miCarrito.splice(indice, 1);//eliminando del carro
     let fila = document.getElementById(`fila${nombre}`);
     document.getElementById("items").removeChild(fila);//eliminando de la tabla
@@ -158,17 +159,7 @@ function crearCard(producto) {
         
 
         let itemaComprar = new itemsDelCarrito(producto, 1);
-
-        //let encontrado = miCarrito.find(p => itemaComprar == p.nombre);
-        //console.log(encontrado);
-        //if (encontrado !== undefined) {
-            //let posicion = miCarrito.findIndex(p => itemaComprar == p.nombre);
-            //console.log(posicion);
-            //miCarrito[posicion].cantidad += 1;
-            //con querySelector falla
-            //document.getElementById(productoNuevo.id).innerHTML=carrito[posicion].cantidad;
-            miCarrito.push(itemaComprar);
-        //}
+        miCarrito.push(itemaComprar);
         localStorage.setItem("miCarrito", JSON.stringify(miCarrito));
 
         dibujarCarrito();
