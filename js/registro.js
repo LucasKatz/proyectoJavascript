@@ -1,4 +1,5 @@
 AOS.init ();
+
 const frmRegistro = document.getElementById("frm-register");
 const fullName = document.getElementById("fullName");
 const userName = document.getElementById("userName");
@@ -66,7 +67,7 @@ function RegisterUser(event) {
       button: true,
       })
   }
-  // Validar que el usuario no exista
+
   else {
     // Agregar usuario
     userRegistered.push(user);
